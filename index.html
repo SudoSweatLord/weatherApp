@@ -8,14 +8,25 @@
   </head>
   <body>
     <div id="searchContainer">
-        <input type="text" class="searchControl" placeholder="City name or Zipcode" id="searchInput">
-    <button class="searchControl" id="searchBtn">Search</button>
+      <input
+        type="text"
+        class="searchControl"
+        placeholder="City name or Zipcode"
+        id="searchInput"
+      />
+      <button class="searchControl" id="searchBtn">Search</button>
     </div>
     <div id="weatherContainer">
-        <div id="weatherDiscription">
-            <h1 id="cityHeader"></h1>
-            <div ></div>
-        </div>
+      <div id="weatherDiscription">
+        <h1 id="cityHeader"></h1>
+        <div id="weatherMain"></div>
+        <div id="temperature"></div>
+        <div id="weatherDiscriptionHeader"></div>
+        <div><img id="documentIconImg" src="" alt="" /></div>
+        <hr />
+        <div id="windSpeed" class="bottonDetails"></div>
+        <div id="humidity" class="bottonDetails"></div>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
