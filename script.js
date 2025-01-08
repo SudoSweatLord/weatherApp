@@ -64,6 +64,16 @@ function init(resultFromServer) {
     "https://openweathermap.org/img/w/" +
     resultFromServer.weather[0].icon +
     ".png";
+
+  let resultDescription = resultFromServer.weather[0].description;
+  weatherDescriptionHeader.innerText =
+    resultDescription.charAt(0).toUpperCase() + resultDescription.slice(1);
+  temperatureElement.innerHTML =
+    Math.floor(resultFromServer.main.temp) + "&#176";
+  windSpeedElement.innerHTML =
+    "Wind is at " + Math.floor(resultFromServer.wind.speed) + " m/s";
+  cityHeader.innerHTML = resultFromServer.name;
+  humidityElement.innerHTML = "Humidity levels at " + "%";
 }
 
 document.getElementById("searchBtn").addEventListener("click", () => {
