@@ -73,7 +73,7 @@ function init(resultFromServer) {
   windSpeedElement.innerHTML =
     "Wind is at " + Math.floor(resultFromServer.wind.speed) + " m/s";
   cityHeader.innerHTML = resultFromServer.name;
-  humidityElement.innerHTML = "Humidity levels at " + "%";
+  humidityElement.innerHTML = "Humidity levels at " + resultFromServer.main.humidity + "%";
   setPositionForWeatherInfo();
 }
 function setPositionForWeatherInfo() {
