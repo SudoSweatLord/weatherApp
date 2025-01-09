@@ -48,6 +48,6 @@ body {
 #weatherMain div {
   display: inline-block;
 }
-#weatherDiscriptionHeader {
+#weatherDescriptionHeader {
   font-size: 2vh;
 }
