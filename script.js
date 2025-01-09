@@ -74,8 +74,17 @@ function init(resultFromServer) {
     "Wind is at " + Math.floor(resultFromServer.wind.speed) + " m/s";
   cityHeader.innerHTML = resultFromServer.name;
   humidityElement.innerHTML = "Humidity levels at " + "%";
+  setPositionForWeatherInfo();
 }
+function setPositionForWeatherInfo() {
+  let weatherContainer = document.getElementById("weatherContainer");
+  let weatherContainerHeight = weatherContainer.clientHeight;
+  let weatherContainerWidth = weatherContainer.clientWidth;
 
+  weatherContainer.style.left = `calc(50% -${weatherContainerWidth / 2}px)`;
+  weatherContainer.style.top = `calc(50% -${weatherContainerHeight / 2}px)`;
+  weatherContainer.style.visibility = "visible";
+}
 document.getElementById("searchBtn").addEventListener("click", () => {
   let searchTerm = document.getElementById("searchInput").value;
   if (searchTerm) searchWeather(searchTerm);
