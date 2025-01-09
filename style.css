@@ -1,0 +1,53 @@
+body {
+  background-image: url("./images/default.jpg");
+  background-size: cover;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: x-large;
+  text-shadow: 2px 2px 1px black;
+}
+
+#weatherContainer {
+  /* visibility: hidden; */
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 4px black;
+  padding: 25vh;
+}
+#weatherContainer h1 {
+  margin: 10vh;
+  font-size: 10vh;
+}
+#searchContainer {
+  padding: 10vh;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+#searchContainer input {
+  width: 20vw;
+}
+
+#searchContainer button {
+  background-color: rgb(1, 142, 182);
+  width: 8vw;
+}
+
+.searchControl {
+  box-shadow: 2px 2px 5px black;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#weatherMain {
+  display: block;
+  margin-bottom: 20px;
+}
+
+#weatherMain div {
+  display: inline-block;
+}
+#weatherDiscriptionHeader {
+  font-size: 2vh;
+}
