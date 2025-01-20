@@ -14,7 +14,7 @@ function getSearchMethod(searchTerm) {
 function searchWeather(searchTerm) {
   getSearchMethod(searchTerm);
   fetch(
-    `http://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`
+    `https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`
   )
     .then((result) => {
       return result.json();
@@ -73,7 +73,8 @@ function init(resultFromServer) {
   windSpeedElement.innerHTML =
     "Wind is at " + Math.floor(resultFromServer.wind.speed) + " m/s";
   cityHeader.innerHTML = resultFromServer.name;
-  humidityElement.innerHTML = "Humidity levels at " + resultFromServer.main.humidity + "%";
+  humidityElement.innerHTML =
+    "Humidity levels at " + resultFromServer.main.humidity + "%";
   setPositionForWeatherInfo();
 }
 function setPositionForWeatherInfo() {
