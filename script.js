@@ -87,7 +87,15 @@ function setPositionForWeatherInfo() {
 
   weatherContainer.style.visibility = "visible";
 }
-document.getElementById("searchBtn").addEventListener("click", () => {
+function handleSearch() {
   let searchTerm = document.getElementById("searchInput").value;
   if (searchTerm) searchWeather(searchTerm);
+}
+
+document.getElementById("searchBtn").addEventListener("click", handleSearch);
+
+document.getElementById("searchInput").addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    handleSearch();
+  }
 });
