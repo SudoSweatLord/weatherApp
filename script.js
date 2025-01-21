@@ -6,52 +6,41 @@ function getSearchMethod(searchTerm) {
   if (
     searchTerm.length === 5 &&
     Number.parseInt(searchTerm) + "" === searchTerm
-  )
-    searchMethod = "zip";
-  else searchMethod = "q";
+  ) {
+    return "zip";
+  }
+  return "q";
+}
+
+function showLoading() {
+  document.getElementById("loadingSpinner").style.display = "block";
+}
+
+function hideLoading() {
+  document.getElementById("loadingSpinner").style.display = "none";
 }
 
 function searchWeather(searchTerm) {
-  getSearchMethod(searchTerm);
+  showLoading(); // Show loading spinner
+  const searchMethod = getSearchMethod(searchTerm);
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`
   )
-    .then((result) => {
-      return result.json();
-    })
+    .then((result) => result.json())
     .then((result) => {
       init(result);
+      hideLoading(); // Hide loading spinner once data is fetched
+    })
+    .catch((error) => {
+      console.error("Error fetching weather data:", error);
+      hideLoading(); // Hide loading spinner even if there is an error
+      alert("Failed to fetch weather data. Please try again.");
     });
 }
 
 function init(resultFromServer) {
-  switch (resultFromServer.weather[0].main) {
-    case "Clear":
-      document.body.style.backgroundImage = "url('./images/clear.jpg')";
-      break;
-    case "Clouds":
-      document.body.style.backgroundImage = "url('./images/cloud.jpg')";
-      break;
-    case "Rain":
-      document.body.style.backgroundImage = "url('./images/rain.jpg')";
-      break;
-    case "Drizzle":
-      document.body.style.backgroundImage = "url('./images/drizzle.jpg')";
+  updateBackground(resultFromServer.weather[0].main);
 
-      break;
-    case "Mist":
-      document.body.style.backgroundImage = "url('./images/mist.jpg')";
-
-      break;
-    case "Thunderstorm":
-      document.body.style.backgroundImage = "url('./images/thunderstorm.jpg')";
-
-      break;
-    case "Snow":
-      document.body.style.backgroundImage = "url('./images/snow.jpg')";
-
-      break;
-  }
   let weatherDescriptionHeader = document.getElementById(
     "weatherDescriptionHeader"
   );
@@ -60,6 +49,7 @@ function init(resultFromServer) {
   let windSpeedElement = document.getElementById("windSpeed");
   let cityHeader = document.getElementById("cityHeader");
   let weatherIcon = document.getElementById("documentIconImg");
+
   weatherIcon.src =
     "https://openweathermap.org/img/w/" +
     resultFromServer.weather[0].icon +
@@ -75,19 +65,37 @@ function init(resultFromServer) {
   cityHeader.innerHTML = resultFromServer.name;
   humidityElement.innerHTML =
     "Humidity levels at " + resultFromServer.main.humidity + "%";
+
   setPositionForWeatherInfo();
 }
+
+function updateBackground(weatherCondition) {
+  const backgroundImages = {
+    Clear: "clear.jpg",
+    Clouds: "cloud.jpg",
+    Rain: "rain.jpg",
+    Drizzle: "drizzle.jpg",
+    Mist: "mist.jpg",
+    Thunderstorm: "thunderstorm.jpg",
+    Snow: "snow.jpg",
+  };
+  document.body.style.backgroundImage = `url('./images/${
+    backgroundImages[weatherCondition] || "default.jpg"
+  }')`;
+}
+
 function setPositionForWeatherInfo() {
   let weatherContainer = document.getElementById("weatherContainer");
-  // let weatherContainerHeight = weatherContainer.clientHeight;
-  // let weatherContainerWidth = weatherContainer.clientWidth;
-
-
   weatherContainer.style.visibility = "visible";
 }
+
 function handleSearch() {
-  let searchTerm = document.getElementById("searchInput").value;
-  if (searchTerm) searchWeather(searchTerm);
+  let searchTerm = document.getElementById("searchInput").value.trim();
+  if (searchTerm) {
+    searchWeather(searchTerm);
+  } else {
+    alert("Please enter a valid location or zip code.");
+  }
 }
 
 document.getElementById("searchBtn").addEventListener("click", handleSearch);
