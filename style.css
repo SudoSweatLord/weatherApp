@@ -38,6 +38,7 @@ body {
   position: absolute;
   right: 5vh;
   top: 0;
+  overflow-wrap: break-word;
 }
 #searchContainer input {
   height: auto;
