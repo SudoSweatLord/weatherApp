@@ -6,13 +6,19 @@ body {
   color: white;
   font-size: x-large;
   text-shadow: 2px 2px 1px black;
+  background-image: url("./images/default.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 #weatherContainer {
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 4px black;
-  padding: 25vh;
+  padding: 15vh;
+  white-space: nowrap;
 }
 #weatherContainer h1 {
   margin: 10vh;
@@ -25,12 +31,14 @@ body {
   position: absolute;
 }
 #searchContainer input {
-  width: 20vw;
+  width: 30vw;
+  height: auto;
 }
 
 #searchContainer button {
   background-color: rgb(1, 142, 182);
-  width: 8vw;
+  width: 10vw;
+  height: auto;
 }
 
 .searchControl {
@@ -49,5 +57,5 @@ body {
   display: inline-block;
 }
 #weatherDescriptionHeader {
-  font-size: 2vh;
+  font-size: 4vh;
 }
