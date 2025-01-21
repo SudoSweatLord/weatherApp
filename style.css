@@ -69,3 +69,16 @@ body {
 #weatherDescriptionHeader {
   font-size: 4vh;
 }
+
+#loadingSpinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  display: none;
+}
+
