@@ -49,6 +49,7 @@ body {
   background-color: rgb(1, 142, 182);
   height: auto;
   width: 10vw;
+  min-width: 58px;
 }
 
 .searchControl {
@@ -81,4 +82,3 @@ body {
   z-index: 1;
   display: none;
 }
-
