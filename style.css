@@ -19,7 +19,7 @@
   --shadow-text: 2px 2px 2px var(--color-shadow-text);
   --shadow-box: 2px 2px 5px var(--color-shadow-box);
   --shadow-container: 1px 1px 4px var(--color-shadow-box);
-  --loader-size: 4rem; 
+  --loader-size: 4rem;
 }
 
 html,
@@ -52,7 +52,7 @@ body {
   visibility: hidden;
   white-space: nowrap;
   width: 100vw;
-  transition: visibility 0.3s ease-in-out; 
+  transition: visibility 0.3s ease-in-out;
 }
 
 #weatherContainer h1 {
@@ -133,12 +133,13 @@ body {
 }
 
 .loader {
-  border: 16px solid ;
-  border-top: 16px solid var(--color-primary-button); 
+  border: 16px solid;
+  border-top: 16px solid var(--color-primary-button);
   border-radius: 50%;
   width: var(--loader-size);
   height: var(--loader-size);
   animation: spin 2s linear infinite;
+  box-shadow: 0 0 15px hsla(0, 0%, 0%, 0.4);
 }
 
 @keyframes spin {
