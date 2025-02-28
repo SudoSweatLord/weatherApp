@@ -41,13 +41,14 @@ body {
   overflow-wrap: break-word;
 }
 #searchContainer input {
-  height: auto;
+  height: 4vh;
   width: 30vw;
+  font-size: large;
 }
 
 #searchContainer button {
   background-color: rgb(1, 142, 182);
-  height: auto;
+  height: 5vh;
   width: 10vw;
   min-width: 58px;
 }
