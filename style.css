@@ -1,17 +1,25 @@
 :root {
-  --main-bg-color: black;
-  --default-bg-image: url("./images/default.jpg");
-  --text-color: white;
-  --font-family: "Lucida Sans", Verdana, sans-serif;
-  --base-font-size: 1.5rem;
-  --text-shadow: 2px 2px 2px black;
-  --container-bg: rgba(0, 0, 0, 0.3);
-  --container-box-shadow: 1px 1px 4px black;
-  --input-font-size: 1.125rem;
-  --header-font-size: 2.5rem;
-  --h1-font-size: 3rem;
-  --button-bg-color: rgb(1, 142, 182);
-  --box-shadow: 2px 2px 5px black;
+  --color-bg-main: hsl(0, 0%, 0%);
+  --color-bg-overlay: hsla(0, 0%, 0%, 0.3);
+  --color-text-primary: hsl(0, 0%, 100%);
+  --color-shadow-text: hsl(0, 0%, 0%);
+  --color-shadow-box: hsl(0, 0%, 0%);
+  --color-button-primary: hsl(193, 99%, 36%);
+
+  --bg-image-default: url("./images/default.jpg");
+
+  --font-family-primary: "Lucida Sans", Verdana, sans-serif;
+  --font-size-base: 1.5rem;
+  --font-size-input: 1.125rem;
+  --font-size-header: 2.5rem;
+  --font-size-h1: 3rem;
+
+  --padding-container: 10vh;
+  --border-radius: 5px;
+
+  --shadow-text: 2px 2px 2px var(--color-shadow-text);
+  --shadow-box: 2px 2px 5px var(--color-shadow-box);
+  --shadow-container: 1px 1px 4px var(--color-shadow-box);
 }
 
 html,
