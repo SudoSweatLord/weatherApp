@@ -3,13 +3,7 @@ let units = "metric";
 let searchMethod;
 
 function getSearchMethod(searchTerm) {
-  if (
-    searchTerm.length === 5 &&
-    Number.parseInt(searchTerm) + "" === searchTerm
-  ) {
-    return "zip";
-  }
-  return "q";
+  return /^\d{5}$/.test(searchTerm) ? "zip" : "q";
 }
 
 function showLoading() {
