@@ -1,5 +1,6 @@
 let appId = "660e3f7f5c0056405ff4525716659fc8";
 let units = "metric";
+let searchMethod;
 
 function getSearchMethod(searchTerm) {
   return /^\d{5}$/.test(searchTerm) ? "zip" : "q";
@@ -23,7 +24,12 @@ function searchWeather(searchTerm) {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`
   )
-    .then((result) => result.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then((result) => {
       init(result);
       hideLoading();
