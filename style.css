@@ -4,7 +4,7 @@
   --color-text-primary: hsl(0, 0%, 100%);
   --color-shadow-text: hsl(0, 0%, 0%);
   --color-shadow-box: hsl(0, 0%, 0%);
-  --color-button-primary: hsl(193, 99%, 36%);
+  --color-button-primary: hsl(187, 83%, 47%);
 
   --bg-image-default: url("./images/default.jpg");
 
@@ -56,6 +56,7 @@ body {
 
 #weatherContainer h1 {
   font-size: var(--font-size-h1);
+  margin: 1em;
 }
 
 #searchContainer {
@@ -109,4 +110,8 @@ body {
   text-align: center;
   z-index: 1;
   display: none;
+}
+
+#temperature {
+  font-size: 2em;
 }
