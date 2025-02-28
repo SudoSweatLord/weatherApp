@@ -1,6 +1,5 @@
 let appId = "660e3f7f5c0056405ff4525716659fc8";
 let units = "metric";
-let searchMethod;
 
 function getSearchMethod(searchTerm) {
   return /^\d{5}$/.test(searchTerm) ? "zip" : "q";
