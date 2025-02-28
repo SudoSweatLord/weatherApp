@@ -1,3 +1,19 @@
+:root {
+  --main-bg-color: black;
+  --default-bg-image: url("./images/default.jpg");
+  --text-color: white;
+  --font-family: "Lucida Sans", Verdana, sans-serif;
+  --base-font-size: 1.5rem;
+  --text-shadow: 2px 2px 2px black;
+  --container-bg: rgba(0, 0, 0, 0.3);
+  --container-box-shadow: 1px 1px 4px black;
+  --input-font-size: 1.125rem;
+  --header-font-size: 2.5rem;
+  --h1-font-size: 3rem;
+  --button-bg-color: rgb(1, 142, 182);
+  --box-shadow: 2px 2px 5px black;
+}
+
 html,
 body {
   height: 100%;
@@ -8,21 +24,21 @@ body {
 
 body {
   background-attachment: fixed;
-  background-color: black;
-  background-image: url("./images/default.jpg");
+  background-color: var(--main-bg-color);
+  background-image: var(--default-bg-image);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
-  font-family: "Lucida Sans", Verdana, sans-serif;
-  font-size: 1.5rem; 
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: var(--base-font-size);
   min-height: 100vh;
-  text-shadow: 2px 2px 2px black;
+  text-shadow: var(--text-shadow);
 }
 
 #weatherContainer {
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 1px 1px 4px black;
+  background-color: var(--container-bg);
+  box-shadow: var(--container-box-shadow);
   height: 100vh;
   padding: 10vh;
   visibility: hidden;
@@ -31,7 +47,7 @@ body {
 }
 
 #weatherContainer h1 {
-  font-size: 3rem;  
+  font-size: var(--h1-font-size);
 }
 
 #searchContainer {
@@ -45,11 +61,11 @@ body {
 #searchContainer input {
   height: 4vh;
   width: 30vw;
-  font-size: 1.125rem; 
+  font-size: var(--input-font-size);
 }
 
 #searchContainer button {
-  background-color: rgb(1, 142, 182);
+  background-color: var(--button-bg-color);
   height: 5vh;
   width: 10vw;
   min-width: 58px;
@@ -58,7 +74,7 @@ body {
 .searchControl {
   border-radius: 5px;
   border: none;
-  box-shadow: 2px 2px 5px black;
+  box-shadow: var(--box-shadow);
   padding: 5px;
 }
 
@@ -72,7 +88,7 @@ body {
 }
 
 #weatherDescriptionHeader {
-  font-size: 2.5rem; 
+  font-size: var(--header-font-size);
 }
 
 #loadingSpinner {
@@ -81,7 +97,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2em;
-  color: white;
+  color: var(--text-color);
   text-align: center;
   z-index: 1;
   display: none;
