@@ -32,34 +32,34 @@ body {
 
 body {
   background-attachment: fixed;
-  background-color: var(--main-bg-color);
-  background-image: var(--default-bg-image);
+  background-color: var(--color-bg-main);
+  background-image: var(--bg-image-default);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: var(--text-color);
-  font-family: var(--font-family);
-  font-size: var(--base-font-size);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
   min-height: 100vh;
-  text-shadow: var(--text-shadow);
+  text-shadow: var(--shadow-text);
 }
 
 #weatherContainer {
-  background-color: var(--container-bg);
-  box-shadow: var(--container-box-shadow);
+  background-color: var(--color-bg-overlay);
+  box-shadow: var(--shadow-container);
   height: 100vh;
-  padding: 10vh;
+  padding: var(--padding-container);
   visibility: hidden;
   white-space: nowrap;
   width: 100vw;
 }
 
 #weatherContainer h1 {
-  font-size: var(--h1-font-size);
+  font-size: var(--font-size-h1);
 }
 
 #searchContainer {
-  padding-top: 10vh;
+  padding-top: var(--padding-container);
   position: absolute;
   right: 5vh;
   top: 0;
@@ -69,20 +69,20 @@ body {
 #searchContainer input {
   height: 4vh;
   width: 30vw;
-  font-size: var(--input-font-size);
+  font-size: var(--font-size-input);
 }
 
 #searchContainer button {
-  background-color: var(--button-bg-color);
+  background-color: var(--color-button-primary);
   height: 5vh;
   width: 10vw;
   min-width: 58px;
 }
 
 .searchControl {
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   border: none;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--shadow-box);
   padding: 5px;
 }
 
@@ -96,7 +96,7 @@ body {
 }
 
 #weatherDescriptionHeader {
-  font-size: var(--header-font-size);
+  font-size: var(--font-size-header);
 }
 
 #loadingSpinner {
@@ -105,7 +105,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2em;
-  color: var(--text-color);
+  color: var(--color-text-primary);
   text-align: center;
   z-index: 1;
   display: none;
