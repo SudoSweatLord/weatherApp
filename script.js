@@ -102,7 +102,7 @@ function handleSearch() {
   searchWeather(searchTerm);
 }
 
-document.getElementById("searchBtn").addEventListener("click", handleSearch);
+document.getElementById("searchButton").addEventListener("click", handleSearch);
 
 document.getElementById("searchInput").addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
